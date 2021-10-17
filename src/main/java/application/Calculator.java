@@ -79,14 +79,26 @@ public class Calculator {
 	}
 
 	public void getStromFromLeistungUndWiderstand(double leistung, double widerstand) {
-    strom = Math.sqrt((leistung/widerstand));
-  }
+		strom = Math.sqrt((leistung / widerstand));
+	}
 
-  public void getStromFromLeistungUndSpannung(double leistung, double spannung) {
-    strom = leistung/spannung;
-  }
+	public void getStromFromLeistungUndSpannung(double leistung, double spannung) {
+		strom = leistung / spannung;
+	}
 
-   public void getStromFromSpannungUndWiderstand(double spannung, double widerstand) {
-    strom = spannung/widerstand;
-  }
+	public void getStromFromSpannungUndWiderstand(double spannung, double widerstand) {
+		strom = spannung / widerstand;
+	}
+
+	public void getWiderstandFromSpannungUndLeistung(double spannung, double leistung) {
+		widerstand = Math.pow(spannung, 2) / leistung;
+	}
+
+	public void getWiderstandFromLeistungUndStrom(double leistung, double strom) {
+		widerstand = spannung / Math.pow(strom, 2);
+	}
+
+	public void getWiderstandFromSpannungUndStrom(double spannung, double strom) {
+		widerstand = spannung / strom;
+	}
 }
