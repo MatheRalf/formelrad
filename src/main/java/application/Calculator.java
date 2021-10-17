@@ -47,9 +47,22 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/* Hier die Methoden mit den Formlen hinzufï¿½gen
 	 */
 	
+	public void getLeistungFromSpannungUndWiderstand(double spannung, double widerstand) {
+		leistung = Math.pow(spannung, 2)/widerstand;
+	}
+
+	 public void getLeistungFromSpannungUndStrom(double spannung, double strom) {
+	 leistung = spannung*strom;
+ }
+
+ public void getLeistungWiderstandUndStrom(double widerstand, double strom) {
+	 leistung = Math.pow(strom, 2)*widerstand;
+ }
+ 
 }
