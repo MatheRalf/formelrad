@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+
 /**
  * Formelrad Application
  * 
@@ -84,6 +85,23 @@ public class Main extends Application {
 			btnLoeschen.setText("Löschen");
 			root.getChildren().add(btnLoeschen);
 
+			txSpannung.textProperty().addListener((observable, oldValue, newValue) -> {
+				if (newValue == null || newValue.isEmpty())
+					txSpannung.setStyle("-fx-text-inner-color: black;");
+			});
+			txLeistung.textProperty().addListener((observable, oldValue, newValue) -> {
+				if (newValue == null || newValue.isEmpty())
+					txLeistung.setStyle("-fx-text-inner-color: black;");
+			});
+			txStrom.textProperty().addListener((observable, oldValue, newValue) -> {
+				if (newValue == null || newValue.isEmpty())
+					txStrom.setStyle("-fx-text-inner-color: black;");
+			});
+			txWiderstand.textProperty().addListener((observable, oldValue, newValue) -> {
+				if (newValue == null || newValue.isEmpty())
+					txWiderstand.setStyle("-fx-text-inner-color: black;");
+			});
+
 			btnBerechnen.setOnAction(e -> {
 				double power = 0.0;
 				double tension = 0.0;
@@ -113,11 +131,19 @@ public class Main extends Application {
 					alert.setHeaderText("Ungültige Eingabe");
 					alert.setContentText("Bitte geben Sie 2 physikalische Grössen ein");
 					alert.showAndWait();
-				}
-				else {
+				} else {
 					Calculator myCalculator = new Calculator(power, tension, current, resistence);
 					myCalculator.calculate();
-	
+
+					if (power != myCalculator.getLeistung())
+						txLeistung.setStyle("-fx-text-inner-color: red;");
+					if (tension != myCalculator.getSpannung())
+						txSpannung.setStyle("-fx-text-inner-color: red;");
+					if (current != myCalculator.getStrom())
+						txStrom.setStyle("-fx-text-inner-color: red;");
+					if (resistence != myCalculator.getWiderstand())
+						txWiderstand.setStyle("-fx-text-inner-color: red;");
+
 					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
 					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 					txStrom.setText(Double.toString(myCalculator.getStrom()));
@@ -130,6 +156,10 @@ public class Main extends Application {
 				txSpannung.clear();
 				txStrom.clear();
 				txWiderstand.clear();
+				txLeistung.setStyle("-fx-text-inner-color: black;");
+				txSpannung.setStyle("-fx-text-inner-color: black;");
+				txStrom.setStyle("-fx-text-inner-color: black;");
+				txWiderstand.setStyle("-fx-text-inner-color: black;");
 			});
 
 			Scene scene = new Scene(root, 330, 490);
