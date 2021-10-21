@@ -79,6 +79,11 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 
+			Button btnLoeschen = new Button();
+			btnLoeschen.relocate(200, 445);
+			btnLoeschen.setText("Löschen");
+			root.getChildren().add(btnLoeschen);
+
 			btnBerechnen.setOnAction(e -> {
 				double power = 0.0;
 				double tension = 0.0;
@@ -118,6 +123,13 @@ public class Main extends Application {
 					txStrom.setText(Double.toString(myCalculator.getStrom()));
 					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
+			});
+
+			btnLoeschen.setOnAction(e -> {
+				txLeistung.clear();
+				txSpannung.clear();
+				txStrom.clear();
+				txWiderstand.clear();
 			});
 
 			Scene scene = new Scene(root, 330, 490);
