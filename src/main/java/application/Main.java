@@ -10,7 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 /**
  * Formelrad Application
  * 
@@ -83,25 +84,40 @@ public class Main extends Application {
 				double tension = 0.0;
 				double current = 0.0;
 				double resistence = 0.0;
+				Integer inputAmount = 0;
+
 				if (!txLeistung.getText().isEmpty()) {
 					power = Double.parseDouble(txLeistung.getText());
+					inputAmount++;
 				}
 				if (!txSpannung.getText().isEmpty()) {
 					tension = Double.parseDouble(txSpannung.getText());
+					inputAmount++;
 				}
 				if (!txStrom.getText().isEmpty()) {
 					current = Double.parseDouble(txStrom.getText());
+					inputAmount++;
 				}
 				if (!txWiderstand.getText().isEmpty()) {
 					resistence = Double.parseDouble(txWiderstand.getText());
+					inputAmount++;
 				}
-				Calculator myCalculator = new Calculator(power, tension, current, resistence);
-				myCalculator.calculate();
-
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if (inputAmount > 2 || inputAmount < 2) {
+					Alert alert = new Alert(AlertType.WARNING);
+					alert.setTitle("Warnung");
+					alert.setHeaderText("Ungültige Eingabe");
+					alert.setContentText("Bitte geben Sie 2 physikalische Grössen ein");
+					alert.showAndWait();
+				}
+				else {
+					Calculator myCalculator = new Calculator(power, tension, current, resistence);
+					myCalculator.calculate();
+	
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				}
 			});
 
 			Scene scene = new Scene(root, 330, 490);
