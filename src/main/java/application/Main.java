@@ -1,5 +1,4 @@
 package application;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -42,8 +41,14 @@ public class Main extends Application {
 
 			TextField txLeistung = new TextField();
 			txLeistung.relocate(100, 285);
+			txLeistung.setMaxWidth(150);
 			txLeistung.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txLeistung);
+
+			Label qnleistung = new Label("Watt");
+			qnleistung.relocate(265, 285);
+			qnleistung.setFont(Font.font(15));
+			root.getChildren().add(qnleistung);
 
 			Label lblSpannung = new Label("Spannung:");
 			lblSpannung.relocate(10, 325);
@@ -52,8 +57,14 @@ public class Main extends Application {
 
 			TextField txSpannung = new TextField();
 			txSpannung.relocate(100, 325);
+			txSpannung.setMaxWidth(150);
 			txSpannung.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txSpannung);
+
+			Label qnSpannung = new Label("Volt");
+			qnSpannung.relocate(265, 325);
+			qnSpannung.setFont(Font.font(15));
+			root.getChildren().add(qnSpannung);
 
 			Label lblStrom = new Label("Strom:");
 			lblStrom.relocate(10, 365);
@@ -62,8 +73,14 @@ public class Main extends Application {
 
 			TextField txStrom = new TextField();
 			txStrom.relocate(100, 365);
+			txStrom.setMaxWidth(150);
 			txStrom.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txStrom);
+			
+			Label qnStrom = new Label("Ampere");
+			qnStrom.relocate(265, 365);
+			qnStrom.setFont(Font.font(15));
+			root.getChildren().add(qnStrom);
 
 			Label lblWiderstand = new Label("Widerstand:");
 			lblWiderstand.relocate(10, 405);
@@ -72,16 +89,22 @@ public class Main extends Application {
 
 			TextField txWiderstand = new TextField();
 			txWiderstand.relocate(100, 405);
+			txWiderstand.setMaxWidth(150);
 			txWiderstand.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txWiderstand);
 
+			Label qnWiderstand = new Label("Ohm");
+			qnWiderstand.relocate(265, 405);
+			qnWiderstand.setFont(Font.font(15));
+			root.getChildren().add(qnWiderstand);
+
 			Button btnBerechnen = new Button();
-			btnBerechnen.relocate(100, 445);
+			btnBerechnen.relocate(100, 445);	
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 
 			Button btnLoeschen = new Button();
-			btnLoeschen.relocate(200, 445);
+			btnLoeschen.relocate(190, 445);
 			btnLoeschen.setText("Löschen");
 			root.getChildren().add(btnLoeschen);
 
