@@ -15,9 +15,10 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * Formelrad Application
  * 
- * @author Peter Rutschmann
- * @version 22.10.2018
+ * @author Marco Karpf
+ * @version 31.10.2021
  */
+
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
