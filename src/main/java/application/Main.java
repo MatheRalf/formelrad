@@ -1,4 +1,5 @@
 package application;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -15,8 +16,8 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * Formelrad Application
  * 
- * @author Peter Rutschmann
- * @version 22.10.2018
+ * @author Abdullah Al-Kubaisi
+ * @version 31.10.2021
  */
 public class Main extends Application {
 	@Override
@@ -76,7 +77,7 @@ public class Main extends Application {
 			txStrom.setMaxWidth(150);
 			txStrom.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txStrom);
-			
+
 			Label qnStrom = new Label("Ampere");
 			qnStrom.relocate(265, 365);
 			qnStrom.setFont(Font.font(15));
@@ -99,7 +100,7 @@ public class Main extends Application {
 			root.getChildren().add(qnWiderstand);
 
 			Button btnBerechnen = new Button();
-			btnBerechnen.relocate(100, 445);	
+			btnBerechnen.relocate(100, 445);
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 
