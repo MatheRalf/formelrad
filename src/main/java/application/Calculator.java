@@ -102,61 +102,62 @@ public class Calculator {
 
 	public void getLeistungFromSpannungUndWiderstand(double spannung, double widerstand) {
 		leistung = Math.pow(spannung, 2) / widerstand;
-		System.out.println("leistung: " + leistung);
+		System.out.println("leistung: " + leistung + "\n" + "formel: (u*u) / r");
+
 	}
 
 	public void getLeistungFromSpannungUndStrom(double spannung, double strom) {
 		leistung = spannung * strom;
-		System.out.println("leistung: " + leistung);
+		System.out.println("leistung: " + leistung + "\n" + "formel: u * i");
 	}
 
 	public void getLeistungWiderstandUndStrom(double widerstand, double strom) {
 		leistung = Math.pow(strom, 2) * widerstand;
-		System.out.println("leistung: " + leistung);
+		System.out.println("leistung: " + leistung + "\n" + "formel: r * (i * i)");
 	}
 
 	public void getSpannungFromLeistungUndWiderstand(double leistung, double widerstand) {
 		spannung = Math.sqrt((leistung * widerstand));
-		System.out.println("spannung: " + spannung);
+		System.out.println("spannung: " + spannung + "\n" + "formel: (p * r)^(1/2) ");
 	}
 
 	public void getSpannungFromLeistungUndStrom(double leistung, double strom) {
 		spannung = leistung / strom;
-		System.out.println("spannung: " + spannung);
+		System.out.println("spannung: " + spannung + "\n" + "formel: p / i");
 	}
 
 	public void getSpannungFromWiderstandUndStrom(double widerstand, double strom) {
 		spannung = widerstand * strom;
-		System.out.println("spannung: " + spannung);
+		System.out.println("spannung: " + spannung + "\n" + "formel: r * i");
 	}
 
 	public void getStromFromLeistungUndWiderstand(double leistung, double widerstand) {
 		strom = Math.sqrt((leistung / widerstand));
-		System.out.println("strom: " + strom);
+		System.out.println("strom: " + strom + "\n" + "formel: (p / r)^(1/2)");
 	}
 
 	public void getStromFromLeistungUndSpannung(double leistung, double spannung) {
 		strom = leistung / spannung;
-		System.out.println("strom: " + strom);
+		System.out.println("strom: " + strom + "\n" + "formel: p / u");
 	}
 
 	public void getStromFromSpannungUndWiderstand(double spannung, double widerstand) {
 		strom = spannung / widerstand;
-		System.out.println("strom: " + strom);
+		System.out.println("strom: " + strom + "\n" + "formel: u / r");
 	}
 
 	public void getWiderstandFromSpannungUndLeistung(double spannung, double leistung) {
 		widerstand = Math.pow(spannung, 2) / leistung;
-		System.out.println("widerstand: " + widerstand);
+		System.out.println("widerstand: " + widerstand + "\n" + "formel: (u*u) / p");
 	}
 
 	public void getWiderstandFromLeistungUndStrom(double leistung, double strom) {
-		widerstand = spannung / Math.pow(strom, 2);
-		System.out.println("widerstand: " + widerstand);
+		widerstand = leistung / Math.pow(strom, 2);
+		System.out.println("widerstand: " + widerstand + "\n" + "formel: p / (i * i)");
 	}
 
 	public void getWiderstandFromSpannungUndStrom(double spannung, double strom) {
 		widerstand = spannung / strom;
-		System.out.println("widerstand: " + widerstand);
+		System.out.println("widerstand: " + widerstand + "\n" + "formel: u/ i");
 	}
 }
