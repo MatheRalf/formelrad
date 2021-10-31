@@ -3,9 +3,10 @@ package application;
 /**
  * Berechnet das Formelrad
  * 
- * @author Abdullah Al-Kubaisi
+ * @author Karpf Marco & Abdullah Al-Kubaisi
  * @version 31.10.2021
  */
+
 public class Calculator {
 	private double leistung;
 	private double spannung;
